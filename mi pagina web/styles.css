@@ -1,0 +1,270 @@
+/* --- RESET --- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+/* --- GENERALES --- */
+
+body {
+    background-color: #ffeed8;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* --- ENCABEZADO --- */
+
+header {
+    background: linear-gradient(90deg, orange, red);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+
+/* --- MENÚ --- */
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: yellow;
+}
+
+
+/* --- CONTENIDO PRINCIPAL --- */
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+
+/* --- SECCIONES --- */
+
+section {
+    border: 5px solid #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #ffeed8;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #e67e22;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+/* --- IMAGEN --- */
+
+#sinopsis img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* --- LISTAS --- */
+
+ul,
+ol {
+    margin-left: 20px;
+}
+
+ul li,
+ol li {
+    margin: 8px 0;
+}
+
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- FORMULARIO --- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: auto;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+form button {
+    background: orange;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: red;
+}
+
+
+/* --- FOOTER --- */
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+
+/* --- CARDS EPISODIOS --- */
+
+.episodios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.episodio-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    border: 3px solid #ff9800;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.episodio-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.episodio-card h3 {
+    margin-bottom: 10px;
+    color: #e65100;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.btn-ver {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff5722, #ff9800);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.btn-ver:hover {
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+
+/* --- Aura Anime Glow --- */
+
+@keyframes aura-glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 152, 0, 0.6), 0 0 20px rgba(255, 87, 34, 0.5), 0 0 30px rgba(255, 193, 7, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 87, 34, 0.8), 0 0 40px rgba(255, 152, 0, 0.7), 0 0 60px rgba(255, 193, 7, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 152, 0, 0.6), 0 0 20px rgba(255, 87, 34, 0.5), 0 0 30px rgba(255, 193, 7, 0.4);
+    }
+}
+
+.episodio-card:hover {
+    transform: scale(1.07);
+    border-color: #ff5722;
+    animation: aura-glow 1.5s infinite alternate;
+}
+
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 1024px) {
+    main {
+        max-width: 95%;
+        padding: 15px;
+    }
+    section {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    main {
+        padding: 10px;
+    }
+    section {
+        margin: 10px 0;
+        padding: 15px;
+        border-width: 3px;
+    }
+    .episodios-container {
+        grid-template-columns: 1fr;
+    }
+}
